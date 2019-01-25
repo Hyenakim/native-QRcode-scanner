@@ -28,4 +28,5 @@ dependencies {
     //zxing 라이브러리
     implementation 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
     implementation 'com.google.zxing:core:3.2.1'
+
 }
