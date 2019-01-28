@@ -1,6 +1,7 @@
 package com.example.gpsk1.qrcode;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.nfc.Tag;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,27 +16,18 @@ public class MainActivity extends AppCompatActivity {
 
     private Button start;
     private static final String TAG = "MainActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    }
 
-        start = (Button)findViewById(R.id.mainActivity_button_start);
-        start.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                IntentIntegrator integrator = new IntentIntegrator(MainActivity.this);
-                integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
-                integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
-                integrator.setPrompt("Scan");
-                integrator.setCameraId(0);
-                integrator.setBeepEnabled(false);
-                integrator.setBarcodeImageEnabled(false);
-                integrator.initiateScan();
-
-
-            }
-        });
+    @Override
+    protected void onResume() {
+        super.onResume();
+        IntentIntegrator integrator = new IntentIntegrator(this);
+        integrator.setCaptureActivity(CustomScannerActivity.class);
+        integrator.initiateScan();
     }
 
     @Override
