@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <com.journeyapps.barcodescanner.DecoratedBarcodeView
-        android:id="@+id/zxing_barcode_scanner"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:zxing_scanner_layout="@layout/custom_barcode_scanner">
-    </com.journeyapps.barcodescanner.DecoratedBarcodeView>
-
+    android:background="@color/zxing_custom_viewfinder_mask"
+    tools:context=".ResultActivity">
     <LinearLayout
         android:id="@+id/menu"
         android:layout_width="match_parent"
@@ -18,40 +13,18 @@
         android:background="#ffffff"
         android:orientation="horizontal">
     </LinearLayout>
+
     <ImageButton
-        android:onClick="addPhoto"
         android:padding="7dp"
         android:background="@null"
-        android:src="@drawable/round_photo_library_black_36"
-        android:id="@+id/add_photo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-    <ImageButton
-        android:onClick="switchFlashLight"
-        android:padding="7dp"
-        android:background="@null"
-        android:src="@drawable/round_flash_off_black_36"
-        android:id="@+id/switch_flashlight"
+        android:onClick="goBack"
+        android:src="@drawable/round_reply_black_36"
+        android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
-
-    <ImageButton
-        android:id="@+id/show_history"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toStartOf="@+id/add_photo"
-        android:layout_toLeftOf="@+id/switch_flashlight"
-        android:background="@null"
-        android:onClick="showHistory"
-        android:padding="7dp"
-        android:src="@drawable/round_history_black_36" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -59,16 +32,17 @@
         android:layout_below="@+id/menu"
         android:layout_marginBottom="50dp"
         android:orientation="vertical"
+        android:background="@layout/border"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:gravity="center_horizontal">
-        <ImageView
-            android:id="@+id/showView"
-            android:visibility="invisible"
 
+        <ListView
+            android:id="@+id/listview"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+
     </LinearLayout>
     <LinearLayout
         android:id="@+id/coment"
@@ -84,10 +58,8 @@
             android:id="@+id/zxing_status_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/zxing_transparent"
             android:gravity="center"
-            android:text="화면 가운데 위치시키세요."
+            android:text="리스트를 누르시면 해당 사이트로 이동합니다."
             android:textColor="#000000" />
     </LinearLayout>
-
 </RelativeLayout>

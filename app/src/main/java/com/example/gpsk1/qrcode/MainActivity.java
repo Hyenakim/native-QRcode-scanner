@@ -12,65 +12,78 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.zxing.Result;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+import com.journeyapps.barcodescanner.CaptureActivity;
 
-public class MainActivity extends AppCompatActivity {
+import org.w3c.dom.Text;
+
+import java.util.Collection;
+
+public class MainActivity extends AppCompatActivity{
 
     private Button start;
+    private MainActivity activity;
     private static final String TAG = "MainActivity";
-    private AlertDialog.Builder builder;
 
+
+    private IntentIntegrator integrator;
+    private boolean restart;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.i(TAG,"메인화면oncreate");
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i(TAG,"메인화면start");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        IntentIntegrator integrator = new IntentIntegrator(this);
-        integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
+        Log.i(TAG, "메인화면resume");
+        integrator = new IntentIntegrator(this);
         integrator.setCaptureActivity(CustomScannerActivity.class);
         integrator.initiateScan();
+
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        Log.e(TAG, ">>> requestCode = " + requestCode + ", resultCode = " + resultCode);
-        if(resultCode == Activity.RESULT_OK){
-        //if(requestCode == IntentIntegrator.REQUEST_CODE){
-            IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-            final String url = result.getContents();
-            Log.i(TAG, ">>> result.getContents()   :  " + result.getContents());
-            Log.i(TAG, ">>> result.getFormatName()   :  " + result.getFormatName());
-
-            //Toast.makeText(this, url, Toast.LENGTH_LONG).show();
-            //알람창 안됨
-            builder = new AlertDialog.Builder(this);
-            builder.setMessage(result.getContents()+"로 이동하시겠습니까?");
-            builder.setPositiveButton("예",
-                    new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-
-                            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-                            intent.setPackage("com.android.chrome");
-                            startActivity(intent);
-                        }
-                    });
-            builder.setNegativeButton("아니오",
-                    new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                        }
-                    });
-            builder.show();
-        }
-
+    protected void onRestart() {
+        super.onRestart();
+        Log.i(TAG, "메인화면restart");
 
     }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i(TAG,"메인화면onpause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i(TAG,"메인화면restart");
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        Log.d("onActivityResult", "onActivityResult: .");
+        if (resultCode == Activity.RESULT_OK) {
+            IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
+            String re = scanResult.getContents();
+            String message = re;
+            Log.d("onActivityResult", "onActivityResult: ." + re);
+            Toast.makeText(this, re, Toast.LENGTH_LONG).show();
+        }
+    }
+
+
 }
