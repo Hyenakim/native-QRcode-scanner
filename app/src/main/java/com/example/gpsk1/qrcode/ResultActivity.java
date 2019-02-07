@@ -58,7 +58,7 @@ public class ResultActivity extends AppCompatActivity {
         });
     }
     public void updateList(){
-        DBHandler dbHandler = new DBHandler(this, null, null, 1);
+        DBHandler dbHandler = new DBHandler(this, null, null, 2);
         Cursor cursor = dbHandler.findAll();
         if(cursorAdapter==null)
         {
@@ -71,7 +71,7 @@ public class ResultActivity extends AppCompatActivity {
         super.onBackPressed();
     }
     public void deleteList(String url){
-        DBHandler dbHandler = new DBHandler(this, null, null, 1);
+        DBHandler dbHandler = new DBHandler(this, null, null, 2);
         dbHandler.deleteResult(url);
     }
     public void showQRcodeDialog(final String url){

@@ -6,13 +6,17 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class DBHandler extends SQLiteOpenHelper{
 
     public static final String DATABASE_NAME = "resultDB.db";//db이름
-    public static final String DATABASE_TABLE = "results";//table이름
+    public static final String DATABASE_TABLE = "result3";//table이름
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_TYPE = "_type";
     public static final String COLUMN_RESULT = "_result";
+    public static final String COLUMN_TIME = "_time";
 
     public DBHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, DATABASE_NAME, factory, version);
@@ -21,7 +25,7 @@ public class DBHandler extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_TABLE = "create table if not exists "+DATABASE_TABLE+"("+ COLUMN_ID +
-                " integer primary key autoincrement," +COLUMN_TYPE + " text,"+COLUMN_RESULT+" text)";
+                " integer primary key autoincrement," +COLUMN_TYPE + " text,"+COLUMN_RESULT+" text,"+COLUMN_TIME+" text)";
         db.execSQL(CREATE_TABLE);
     }
 
@@ -32,6 +36,8 @@ public class DBHandler extends SQLiteOpenHelper{
     }
     public void addResult(Result result){
         ContentValues values=new ContentValues();
+
+        values.put(COLUMN_TIME,result.getTime());
         values.put(COLUMN_TYPE, result.getType());
         values.put(COLUMN_RESULT, result.getResult());
         SQLiteDatabase db = this.getWritableDatabase();

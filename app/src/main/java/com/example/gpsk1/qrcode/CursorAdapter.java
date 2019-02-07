@@ -22,10 +22,10 @@ public class CursorAdapter extends android.widget.CursorAdapter{
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-        final TextView id = (TextView)view.findViewById(R.id.listid);
+        final TextView ptime = (TextView)view.findViewById(R.id.listtime);
         final TextView ptype = (TextView)view.findViewById(R.id.listtype);
         final TextView presult = (TextView)view.findViewById(R.id.listresult);
-        id.setText(cursor.getString(cursor.getColumnIndex("_id")));
+        ptime.setText(cursor.getString(cursor.getColumnIndex("_time")));
         ptype.setText("포맷 : "+cursor.getString(cursor.getColumnIndex("_type")));
         presult.setText(cursor.getString(cursor.getColumnIndex("_result")));
     }
