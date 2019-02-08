@@ -11,9 +11,9 @@ import java.util.Date;
 
 public class DBHandler extends SQLiteOpenHelper{
 
-    public static final String DATABASE_NAME = "resultDB.db";//db이름
-    public static final String DATABASE_TABLE = "result3";//table이름
-    public static final String COLUMN_ID = "_id";
+    public static final String DATABASE_NAME = "resultDB.db";   //db이름
+    public static final String DATABASE_TABLE = "result3";      //table이름
+    public static final String COLUMN_ID = "_id";               
     public static final String COLUMN_TYPE = "_type";
     public static final String COLUMN_RESULT = "_result";
     public static final String COLUMN_TIME = "_time";
@@ -61,38 +61,6 @@ public class DBHandler extends SQLiteOpenHelper{
         }
         db.close();
         return resultFlag;
-    }
-    public Result findResult(String result){
-        String query="select * from "+DATABASE_TABLE + " where "+
-                COLUMN_RESULT+"= \'"+result+"\'";
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(query, null);
-        Result result1 = new Result();
-        if(cursor.moveToFirst()){
-            result1.setID(Integer.parseInt(cursor.getString(0)));
-            result1.setResult(cursor.getString(2));
-            result1.setType(cursor.getString(1));
-            cursor.close();
-        } else {
-            result1 = null;
-        }
-        db.close();
-        return result1;
-    }
-    public boolean updateProduct(Result argresult) {
-        Result result = findResult(argresult.getResult());
-        if (result != null) {
-            SQLiteDatabase db = this.getWritableDatabase();
-            ContentValues values = new ContentValues();
-            values.put(COLUMN_RESULT, result.getResult());
-            values.put(COLUMN_TYPE, argresult.getType());
-            db.update(DATABASE_TABLE, values, COLUMN_ID + "= \'" +
-                            result.getID() + "\'"
-                    , null);
-            db.close();
-            return true;
-        }
-        return false;
     }
     public Cursor findAll(){
         String query="select * from "+DATABASE_TABLE;

@@ -64,9 +64,11 @@ public class ResultActivity extends AppCompatActivity {
             }
         });
     }
-    /*
-    * 리스트 새로고침
-    * */
+    /**
+     * 리스트를 새로고침합니다.
+     *
+     * @return void
+     */
     public void updateList(){
         DBHandler dbHandler = new DBHandler(this, null, null, 2);
         Cursor cursor = dbHandler.findAll();
@@ -77,9 +79,11 @@ public class ResultActivity extends AppCompatActivity {
         }
         cursorAdapter.changeCursor(cursor);
     }
-    /*
-    * 리스트 삭제
-    * */
+    /**
+     * 선택 항목을 리스트에서 삭제합니다.
+     *
+     * @return void
+     */
     public void deleteList(String url,String time){
         DBHandler dbHandler = new DBHandler(this, null, null, 2);
         dbHandler.deleteResult(url,time);
@@ -87,13 +91,13 @@ public class ResultActivity extends AppCompatActivity {
     public void goBack(View view){
         super.onBackPressed();
     }
-    /*
-    * 다이얼로그
-    * qrcode 선택시 호출
-    * 예 - url이동
-    * 아니오 - 돌아가기
-    * 기록삭제 - 선택 항목 삭제
-    * */
+    /**
+     * 다이얼로그를 띄웁니다.
+     *
+     * @param url 선택 항목 qr코드 결과
+     * @param time 선택 항목 시간정보
+     * @return void
+     */
     public void showQRcodeDialog(final String url,final String time){
         Log.i(TAG,"다이얼로그시작");
         builder = new AlertDialog.Builder(this);
@@ -130,12 +134,13 @@ public class ResultActivity extends AppCompatActivity {
         dialog.show();
         Log.i(TAG,"다이얼로그끝");
     }
-    /*
-    * 다이얼로그
-    * 바코드 선택 시 호출
-    * 확인 - 돌아가기
-    * 기록삭제 - 선택 항목 삭제
-    * */
+    /**
+     * 다이얼로그를 띄웁니다.
+     *
+     * @param num 선택 항목 바코드 결과
+     * @param time 선택 항목 시간정보
+     * @return void
+     */
     public void showBarcodeDialog(final String num,final String time){
         Log.i(TAG,"다이얼로그시작");
         builder = new AlertDialog.Builder(this);

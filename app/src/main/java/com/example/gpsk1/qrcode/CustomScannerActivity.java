@@ -10,6 +10,8 @@ import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
+import android.media.ExifInterface;
 import android.media.Image;
 import android.net.Uri;
 import android.nfc.Tag;
@@ -74,41 +76,28 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
     private static final String TAG = "CustomScannerActivity";
     private AlertDialog.Builder builder ;
     private ImageView photoView;
-    private String presult;
-    private String ptype;
-    private String ptime;
     private Uri imgUri;
     private String mCurrentPhotoPath;
     private File tempFile;
     private static final int PICK_FROM_ALBUM = 1;
+    private String presult; //스캔 결과 값 ex)http://www.naver.com
+    private String ptype;   //스캔 결과 타입 ex)QR_CODE
+    private String ptime;   //스캔 결과 시간정보 ex)2019-02-08 01:34:24
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.i(TAG,"1");
         setContentView(R.layout.activity_custom_scanner);
         init();
         tedPermission();
 
         switchFlashLightButtonCheck = true;
-
-        backPressCloseHandler = new BackPressCloseHandler(this);
-
-        switchFlashLightButton = (ImageButton)findViewById(R.id.switch_flashlight);
-
-        photoView = (ImageView)findViewById(R.id.showView);
-
         if(!hasFlash()){
             switchFlashLightButton.setVisibility(View.GONE);
         }
-
-        barcodeScannerView = (DecoratedBarcodeView)findViewById(R.id.zxing_barcode_scanner);
         barcodeScannerView.setTorchListener(this);
         barcodeScannerView.setFocusable(false);
-        capture = new CaptureManager(this, barcodeScannerView);
         capture.initializeFromIntent(getIntent(),savedInstanceState);
-
-        //capture.decode();
         barcodeScannerView.decodeContinuous(new BarcodeCallback() {
             @Override
             public void barcodeResult(BarcodeResult result) {
@@ -137,9 +126,21 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
             }
         });
     }
-    /*
-    * 권한 확인 (마시멜로우 필요)
-    * */
+    public void init(){
+        ptype = null;
+        presult = null;
+        ptime = null;
+        switchFlashLightButton = (ImageButton)findViewById(R.id.switch_flashlight);
+        photoView = (ImageView)findViewById(R.id.showView);
+        barcodeScannerView = (DecoratedBarcodeView)findViewById(R.id.zxing_barcode_scanner);
+
+        backPressCloseHandler = new BackPressCloseHandler(this);
+        capture = new CaptureManager(this, barcodeScannerView);
+    }
+    /**
+     * 권한을 확인합니다.
+     * @return void
+     */
     private void tedPermission() {
         PermissionListener permissionListener = new PermissionListener() {
             @Override
@@ -159,11 +160,7 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
                 .setPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 .check();
     }
-    public void init(){
-        ptype = null;
-        presult = null;
-        ptime = null;
-    }
+
     private boolean hasFlash() {
         return getApplicationContext().getPackageManager()
                 .hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH);
@@ -202,13 +199,14 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
         backPressCloseHandler.onBackPressed();
     }
 
-    /*
-    * 메인 화면 이미지버튼 onClick
-    * 1. 손전등 버튼
-    * 2. 기록 버튼
-    * 3. 앨범 버튼
-    * */
-    //손전등버튼
+    /**
+     * 메인버튼
+     *
+     * 1. 손전등 버튼
+     * 2. 히스토리 버튼
+     * 3. 앨범 버튼
+     */
+    //손전등버튼 onClick
     public void switchFlashLight(View view){
         if(switchFlashLightButtonCheck){
             barcodeScannerView.setTorchOn();
@@ -216,13 +214,13 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
             barcodeScannerView.setTorchOff();
         }
     }
-    //앨범버튼
+    //앨범버튼 onClick
     public void addPhoto(View view){
         Intent intent = new Intent(Intent.ACTION_PICK);
         intent.setType(MediaStore.Images.Media.CONTENT_TYPE);
         startActivityForResult(intent,PICK_FROM_ALBUM);
     }
-    //기록버튼
+    //기록버튼 onClick
     public void showHistory(View view){
         Intent intent = new Intent(getApplicationContext(),ResultActivity.class);
         startActivity(intent);
@@ -259,6 +257,7 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
             case PICK_FROM_ALBUM:{
                 //이미지 선택 후
                 imgUri = data.getData();
+                deleteFile(tempFile);
                 cropImage(imgUri);
                 break;
             }
@@ -267,10 +266,19 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
                 barcodeScannerView.pause();
                 if(resultCode == RESULT_OK){
                     //크롭된 이미지 띄우기
-                    photoView.setVisibility(View.VISIBLE);
                     String tmpPath = tempFile.getPath();
                     Bitmap img = BitmapFactory.decodeFile(tmpPath);
-                    photoView.setImageURI(Crop.getOutput(data));
+                    try {
+                        //크롭 후 이미지 자동회전 저장 방지하기 위해
+                        ExifInterface exif = new ExifInterface(tmpPath);
+                        int orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_UNDEFINED);
+                        int exifDegree = exifOrientationToDegrees(orientation);
+                        img = rotate(img, exifDegree);
+                    }catch (IOException e) {
+                        Log.i(TAG, e.getMessage());
+                    }
+                    photoView.setImageBitmap(img);
+                    photoView.setVisibility(View.VISIBLE);
                     //스캔 시작
                     Result decoded = scanQRImage(img);
                     Log.i("QrTest", "Decoded string="+decoded);
@@ -292,15 +300,70 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
                         showQRcodeDialog(decoded.getText());
                     else
                         showBarcodeDialog(decoded.getText());
-                    //임시 파일 삭제
-                    deleteFile(tempFile);
                 }
             }
         }
     }
-    /*
-    * 이미지 크롭 함수
-    * */
+    /**
+     * EXIF정보를 회전각도로 변환하는 메서드
+     *
+     * @param exifOrientation EXIF 회전각
+     * @return 실제 각도
+     */
+    public int exifOrientationToDegrees(int exifOrientation)
+    {
+        if(exifOrientation == ExifInterface.ORIENTATION_ROTATE_90)
+        {
+            return 90;
+        }
+        else if(exifOrientation == ExifInterface.ORIENTATION_ROTATE_180)
+        {
+            return 180;
+        }
+        else if(exifOrientation == ExifInterface.ORIENTATION_ROTATE_270)
+        {
+            return 270;
+        }
+        return 0;
+    }
+    /**
+     * 이미지를 회전시킵니다.
+     *
+     * @param bitmap 비트맵 이미지
+     * @param degrees 회전 각도
+     * @return 회전된 이미지
+     */
+    public Bitmap rotate(Bitmap bitmap, int degrees)
+    {
+        if(degrees != 0 && bitmap != null)
+        {
+            Matrix m = new Matrix();
+            m.setRotate(degrees, (float) bitmap.getWidth() / 2,
+                    (float) bitmap.getHeight() / 2);
+
+            try
+            {
+                Bitmap converted = Bitmap.createBitmap(bitmap, 0, 0,
+                        bitmap.getWidth(), bitmap.getHeight(), m, true);
+                if(bitmap != converted)
+                {
+                    bitmap.recycle();
+                    bitmap = converted;
+                }
+            }
+            catch(OutOfMemoryError ex)
+            {
+                // 메모리가 부족하여 회전을 시키지 못할 경우 그냥 원본을 반환합니다.
+            }
+        }
+        return bitmap;
+    }
+    /**
+     * 이미지를 자릅니다.
+     *
+     * @param photoUri 선택한 이미지
+     * @return void
+     */
     private void cropImage(Uri photoUri) {
         Log.d(TAG, "tempFile : " + tempFile);
         /**
@@ -314,9 +377,11 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
 
         Crop.of(photoUri, savingUri).asSquare().start(this);
     }
-    /*
-    * 파일 생성 및 파일 반환
-    * */
+    /**
+     * 파일을 생성합니다.
+     *
+     * @return 생성된 파일
+     */
     private File createImageFile() {
         // Create an image file name
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.KOREA).format(new Date());
@@ -341,9 +406,12 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
         }
         return image;
     }
-    /*
-    * 파일 삭제
-    * */
+    /**
+     * 파일을 제거합니다.
+     *
+     * @param file 선택된 파일
+     * @return 제거 실패-false, 성공-true
+     */
     public static boolean deleteFile(File file){
         if(file!=null && file.isDirectory()){
             String[] children = file.list();
@@ -355,9 +423,12 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
         }
         return file!=null && file.delete();
     }
-    /*
-    * 이미지 스캔 및 스캔 결과 반환
-    * */
+    /**
+     * 이미지를 스캔합니다.
+     *
+     * @param bMap 비트맵 이미지
+     * @return 스캔 결과 (url, 바코드type 등등)
+     */
     public static Result scanQRImage(Bitmap bMap) {
         int[] intArray = new int[bMap.getWidth()*bMap.getHeight()];
         //copy pixel data from the Bitmap into the 'intArray' array
@@ -382,21 +453,23 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
         }
         return result;
     }
-    /*
-    * 스캔 후 db저장
-    * */
+    /**
+     * 결과를 db에 저장합니다.
+     *
+     * @return void
+     */
     public void newResult(){
         DBHandler dbHandler = new DBHandler(this, null, null, 2);
 
         com.example.gpsk1.qrcode.Result product = new com.example.gpsk1.qrcode.Result(ptype, presult, ptime);
         dbHandler.addResult(product);
     }
-    /*
-    * 다이얼로그
-    * qrcode스캔 시 호출됨
-    * 예 - 크롬창 이동
-    * 아니오 - 뒤로가기
-    * */
+    /**
+     * 다이얼로그를 띄웁니다.
+     *
+     * @param url qr코드 스캔 결과
+     * @return void
+     */
     public void showQRcodeDialog(final String url){
         Log.i(TAG,"다이얼로그시작");
         builder = new AlertDialog.Builder(this);
@@ -425,11 +498,12 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
         dialog.show();
         Log.i(TAG,"다이얼로그끝");
     }
-    /*
-     * 다이얼로그
-     * barcode스캔시 호출됨
-     * 확인 - 뒤로가기
-     * */
+    /**
+     * 다이얼로그를 띄웁니다.
+     *
+     * @param num 바코드 스캔 결과
+     * @return void
+     */
     public void showBarcodeDialog(final String num){
         Log.i(TAG,"다이얼로그시작");
         builder = new AlertDialog.Builder(this);
@@ -449,11 +523,11 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
         dialog.show();
         Log.i(TAG,"다이얼로그끝");
     }
-    /*
-    * 다이얼로그
-    * 스캔 실패시 호출됨
-    * 돌아가기 - 뒤로가기
-    * */
+    /**
+     * 다이얼로그를 띄웁니다.
+     *
+     * @return void
+     */
     public void showError(){
         Log.i(TAG,"다이얼로그시작");
         builder = new AlertDialog.Builder(this);
