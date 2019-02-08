@@ -26,6 +26,8 @@ import com.baoyz.swipemenulistview.SwipeMenu;
 import com.baoyz.swipemenulistview.SwipeMenuCreator;
 import com.baoyz.swipemenulistview.SwipeMenuItem;
 import com.baoyz.swipemenulistview.SwipeMenuListView;
+import com.google.zxing.BarcodeFormat;
+
 import android.widget.Toast;
 
 import org.w3c.dom.Text;
@@ -33,8 +35,6 @@ import org.w3c.dom.Text;
 import java.util.List;
 
 public class ResultActivity extends AppCompatActivity {
-
-
     private CursorAdapter cursorAdapter;
     private ListView listView;
     private ImageButton back;
@@ -51,12 +51,21 @@ public class ResultActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                TextView tv = (TextView)view.findViewById(R.id.listresult);
-                Log.i(TAG,String.valueOf(tv.getText()));
-                showQRcodeDialog(String.valueOf(tv.getText()));
+                TextView typ = (TextView)view.findViewById(R.id.listtype);
+                TextView res = (TextView)view.findViewById(R.id.listresult);
+                Log.i(TAG,String.valueOf(res.getText()));
+                Log.i(TAG,String.valueOf(typ.getText()));
+                String tmp = "포맷 : QR_CODE";
+                if(String.valueOf(typ.getText()).equals(tmp))
+                    showQRcodeDialog(String.valueOf(res.getText()));
+                else
+                    showBarcodeDialog(String.valueOf(res.getText()));
             }
         });
     }
+    /*
+    * 리스트 새로고침
+    * */
     public void updateList(){
         DBHandler dbHandler = new DBHandler(this, null, null, 2);
         Cursor cursor = dbHandler.findAll();
@@ -67,13 +76,23 @@ public class ResultActivity extends AppCompatActivity {
         }
         cursorAdapter.changeCursor(cursor);
     }
-    public void goBack(View view){
-        super.onBackPressed();
-    }
+    /*
+    * 리스트 삭제
+    * */
     public void deleteList(String url){
         DBHandler dbHandler = new DBHandler(this, null, null, 2);
         dbHandler.deleteResult(url);
     }
+    public void goBack(View view){
+        super.onBackPressed();
+    }
+    /*
+    * 다이얼로그
+    * qrcode 선택시 호출
+    * 예 - url이동
+    * 아니오 - 돌아가기
+    * 기록삭제 - 선택 항목 삭제
+    * */
     public void showQRcodeDialog(final String url){
         Log.i(TAG,"다이얼로그시작");
         builder = new AlertDialog.Builder(this);
@@ -110,6 +129,37 @@ public class ResultActivity extends AppCompatActivity {
         dialog.show();
         Log.i(TAG,"다이얼로그끝");
     }
-
+    /*
+    * 다이얼로그
+    * 바코드 선택 시 호출
+    * 확인 - 돌아가기
+    * 기록삭제 - 선택 항목 삭제
+    * */
+    public void showBarcodeDialog(final String num){
+        Log.i(TAG,"다이얼로그시작");
+        builder = new AlertDialog.Builder(this);
+        builder.setMessage(num+'\n'+"바코드 결과입니다.");
+        builder.setPositiveButton("확인",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        builder.setNeutralButton("기록삭제",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        deleteList(num);
+                        updateList();
+                        dialog.dismiss();
+                    }
+                });
+        final AlertDialog dialog = builder.create();
+        dialog.setCancelable(false);//뒤로가기키 막기
+        dialog.setCanceledOnTouchOutside(false);//배경 터치 막기
+        dialog.show();
+        Log.i(TAG,"다이얼로그끝");
+    }
 
 }
