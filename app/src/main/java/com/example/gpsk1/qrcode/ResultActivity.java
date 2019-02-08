@@ -53,13 +53,14 @@ public class ResultActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 TextView typ = (TextView)view.findViewById(R.id.listtype);
                 TextView res = (TextView)view.findViewById(R.id.listresult);
+                TextView tim = (TextView)view.findViewById(R.id.listtime);
                 Log.i(TAG,String.valueOf(res.getText()));
                 Log.i(TAG,String.valueOf(typ.getText()));
                 String tmp = "포맷 : QR_CODE";
                 if(String.valueOf(typ.getText()).equals(tmp))
-                    showQRcodeDialog(String.valueOf(res.getText()));
+                    showQRcodeDialog(String.valueOf(res.getText()),String.valueOf(tim.getText()));
                 else
-                    showBarcodeDialog(String.valueOf(res.getText()));
+                    showBarcodeDialog(String.valueOf(res.getText()),String.valueOf(tim.getText()));
             }
         });
     }
@@ -79,9 +80,9 @@ public class ResultActivity extends AppCompatActivity {
     /*
     * 리스트 삭제
     * */
-    public void deleteList(String url){
+    public void deleteList(String url,String time){
         DBHandler dbHandler = new DBHandler(this, null, null, 2);
-        dbHandler.deleteResult(url);
+        dbHandler.deleteResult(url,time);
     }
     public void goBack(View view){
         super.onBackPressed();
@@ -93,7 +94,7 @@ public class ResultActivity extends AppCompatActivity {
     * 아니오 - 돌아가기
     * 기록삭제 - 선택 항목 삭제
     * */
-    public void showQRcodeDialog(final String url){
+    public void showQRcodeDialog(final String url,final String time){
         Log.i(TAG,"다이얼로그시작");
         builder = new AlertDialog.Builder(this);
         builder.setMessage(url+"로 이동하시겠습니까?");
@@ -118,7 +119,7 @@ public class ResultActivity extends AppCompatActivity {
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        deleteList(url);
+                        deleteList(url,time);
                         updateList();
                         dialog.dismiss();
                     }
@@ -135,7 +136,7 @@ public class ResultActivity extends AppCompatActivity {
     * 확인 - 돌아가기
     * 기록삭제 - 선택 항목 삭제
     * */
-    public void showBarcodeDialog(final String num){
+    public void showBarcodeDialog(final String num,final String time){
         Log.i(TAG,"다이얼로그시작");
         builder = new AlertDialog.Builder(this);
         builder.setMessage(num+'\n'+"바코드 결과입니다.");
@@ -150,7 +151,7 @@ public class ResultActivity extends AppCompatActivity {
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        deleteList(num);
+                        deleteList(num,time);
                         updateList();
                         dialog.dismiss();
                     }

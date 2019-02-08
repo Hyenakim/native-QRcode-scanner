@@ -44,10 +44,10 @@ public class DBHandler extends SQLiteOpenHelper{
         db.insert(DATABASE_TABLE, null, values);
         db.close();
     }
-    public boolean deleteResult(String result){
+    public boolean deleteResult(String result,String time){
         boolean resultFlag = false;
         String query="select * from "+DATABASE_TABLE +
-                " where "+COLUMN_RESULT+"= \'"+result+"\'";
+                " where "+COLUMN_RESULT+"= \'"+result+"\'"+" and "+COLUMN_TIME+"= \'"+time+"\'";
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(query, null);
         Result result1 = new Result();
