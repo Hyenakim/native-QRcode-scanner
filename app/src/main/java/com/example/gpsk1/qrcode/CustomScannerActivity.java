@@ -139,6 +139,7 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
     }
     /**
      * 권한을 확인합니다.
+     *
      * @return void
      */
     private void tedPermission() {
@@ -442,7 +443,7 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
 
         Hashtable<DecodeHintType, Object> decodeHints = new Hashtable<DecodeHintType, Object>();
         decodeHints.put(DecodeHintType.TRY_HARDER, Boolean.TRUE);
-        decodeHints.put(DecodeHintType.PURE_BARCODE, Boolean.TRUE);
+        //decodeHints.put(DecodeHintType.PURE_BARCODE, Boolean.TRUE);
         try {
             Log.i(TAG,"try");
             result = reader.decode(bitmap,decodeHints);
@@ -481,6 +482,7 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
                         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                         intent.setPackage("com.android.chrome");
                         startActivity(intent);
+                        photoView.setVisibility(View.INVISIBLE);
                     }
                 });
         builder.setNegativeButton("아니오",

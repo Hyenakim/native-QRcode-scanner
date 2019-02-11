@@ -13,7 +13,7 @@ public class DBHandler extends SQLiteOpenHelper{
 
     public static final String DATABASE_NAME = "resultDB.db";   //db이름
     public static final String DATABASE_TABLE = "result3";      //table이름
-    public static final String COLUMN_ID = "_id";               
+    public static final String COLUMN_ID = "_id";
     public static final String COLUMN_TYPE = "_type";
     public static final String COLUMN_RESULT = "_result";
     public static final String COLUMN_TIME = "_time";
@@ -34,6 +34,12 @@ public class DBHandler extends SQLiteOpenHelper{
         db.execSQL("drop table if exists "+DATABASE_TABLE);
         onCreate(db);
     }
+    /**
+     * 결과를 db 에 저장합니다.
+     *
+     * @param result 스캔 결과
+     * @return void
+     */
     public void addResult(Result result){
         ContentValues values=new ContentValues();
 
@@ -44,6 +50,13 @@ public class DBHandler extends SQLiteOpenHelper{
         db.insert(DATABASE_TABLE, null, values);
         db.close();
     }
+    /**
+     * 결과를 db 에서 삭제합니다.
+     *
+     * @param result 스캔 결과
+     * @param time 스캔 시간정보
+     * @return 삭제 성공-true 실패-false
+     */
     public boolean deleteResult(String result,String time){
         boolean resultFlag = false;
         String query="select * from "+DATABASE_TABLE +
@@ -62,6 +75,11 @@ public class DBHandler extends SQLiteOpenHelper{
         db.close();
         return resultFlag;
     }
+    /**
+     * 모든 db 내용을 가져옵니다.
+     *
+     * @return cursor db 전체
+     */
     public Cursor findAll(){
         String query="select * from "+DATABASE_TABLE;
         SQLiteDatabase db = this.getWritableDatabase();
