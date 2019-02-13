@@ -1,4 +1,4 @@
-package com.example.gpsk1.qrcode;
+package com.example.gpsk1.qrcode.model;
 
 public class Result {
     private int _id;

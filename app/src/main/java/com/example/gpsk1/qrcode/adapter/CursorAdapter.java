@@ -1,4 +1,4 @@
-package com.example.gpsk1.qrcode;
+package com.example.gpsk1.qrcode.adapter;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.gpsk1.qrcode.R;
 
 public class CursorAdapter extends android.widget.CursorAdapter{
 

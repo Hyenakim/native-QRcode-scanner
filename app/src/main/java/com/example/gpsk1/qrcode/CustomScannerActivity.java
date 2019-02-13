@@ -2,19 +2,14 @@ package com.example.gpsk1.qrcode;
 
 import android.Manifest;
 import android.app.Activity;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.content.res.AssetManager;
-import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.media.ExifInterface;
-import android.media.Image;
 import android.net.Uri;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -22,12 +17,12 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.gpsk1.qrcode.util.DBHandler;
+import com.example.gpsk1.qrcode.util.BackPressCloseHandler;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.BinaryBitmap;
 import com.google.zxing.DecodeHintType;
@@ -37,28 +32,16 @@ import com.google.zxing.RGBLuminanceSource;
 import com.google.zxing.Result;
 import com.google.zxing.ResultPoint;
 import com.google.zxing.common.HybridBinarizer;
-import com.google.zxing.integration.android.IntentIntegrator;
-import com.google.zxing.integration.android.IntentResult;
-import com.google.zxing.qrcode.encoder.QRCode;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
 import com.journeyapps.barcodescanner.BarcodeCallback;
 import com.journeyapps.barcodescanner.BarcodeResult;
 import com.journeyapps.barcodescanner.CaptureManager;
-import com.journeyapps.barcodescanner.CompoundBarcodeView;
 import com.journeyapps.barcodescanner.DecoratedBarcodeView;
 import com.soundcloud.android.crop.Crop;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.Reader;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -462,7 +445,7 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
     public void newResult(){
         DBHandler dbHandler = new DBHandler(this, null, null, 2);
 
-        com.example.gpsk1.qrcode.Result product = new com.example.gpsk1.qrcode.Result(ptype, presult, ptime);
+        com.example.gpsk1.qrcode.model.Result product = new com.example.gpsk1.qrcode.model.Result(ptype, presult, ptime);
         dbHandler.addResult(product);
     }
     /**

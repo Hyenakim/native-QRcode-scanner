@@ -1,4 +1,4 @@
-package com.example.gpsk1.qrcode;
+package com.example.gpsk1.qrcode.util;
 
 import android.app.Activity;
 import android.os.Build;

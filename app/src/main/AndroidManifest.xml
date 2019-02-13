@@ -26,7 +26,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AnyOrientationCaptureActivity"
+            android:name=".util.AnyOrientationCaptureActivity"
             android:screenOrientation="fullSensor"
             android:stateNotNeeded="true"
             android:theme="@style/zxing_CaptureTheme"

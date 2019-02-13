@@ -1,4 +1,4 @@
-package com.example.gpsk1.qrcode;
+package com.example.gpsk1.qrcode.util;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,8 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import com.example.gpsk1.qrcode.model.Result;
 
 public class DBHandler extends SQLiteOpenHelper{
 
