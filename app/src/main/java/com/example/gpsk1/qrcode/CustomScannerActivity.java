@@ -445,7 +445,7 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
      */
     public void showQRcodeDialog(final String url){
         builder = new AlertDialog.Builder(this);
-        builder.setMessage(url+R.string.move);
+        builder.setMessage(url+getResources().getString(R.string.move));
         builder.setPositiveButton(R.string.yes,
                 new DialogInterface.OnClickListener() {
                     @Override

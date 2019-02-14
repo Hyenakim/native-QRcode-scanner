@@ -35,4 +35,5 @@ dependencies {
     //이미지 크롭
     implementation 'com.soundcloud.android:android-crop:1.0.1@aar'
 
+    implementation 'com.android.support:recyclerview-v7:25.+'
 }

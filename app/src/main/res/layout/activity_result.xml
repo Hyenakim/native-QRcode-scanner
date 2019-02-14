@@ -1,64 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/zxing_custom_viewfinder_mask"
+    android:background="@color/background"
+    android:orientation="vertical"
     tools:context=".ResultActivity">
-    <LinearLayout
-        android:id="@+id/menu"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#ffffff"
-        android:orientation="horizontal"/>
 
-    <ImageButton
-        android:padding="7dp"
-        android:background="@null"
-        android:onClick="goBack"
-        android:src="@drawable/round_reply_black_36"
-        android:id="@+id/back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="goBack"
+            android:id="@+id/back"
+            android:background="@color/background"
+            android:src="@drawable/round_reply_black_48"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/menu"
-        android:layout_marginBottom="50dp"
-        android:orientation="vertical"
-        android:background="@drawable/border"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:gravity="center_horizontal">
 
-        <ListView
-            android:id="@+id/listview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/coment"
-        android:gravity="center_horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#ffffff"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-
-        <TextView
-            android:id="@+id/zxing_status_view"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="리스트를 누르시면 해당 사이트로 이동합니다."
-            android:textColor="#000000" />
-    </LinearLayout>
-</RelativeLayout>
+            android:orientation="vertical"
+            >
+            <ListView
+                android:id="@+id/listview"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="7"
+                android:background="@drawable/border"
+                >
+            </ListView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="fill_vertical"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="@string/listShow" />
+        </LinearLayout>
+
+
+
+</LinearLayout>
