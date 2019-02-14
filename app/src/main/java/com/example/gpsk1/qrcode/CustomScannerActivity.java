@@ -85,8 +85,6 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
             @Override
             public void barcodeResult(BarcodeResult result) {
                 barcodeScannerView.pause();
-                Log.i(TAG,result.getBarcodeFormat().toString());
-                Log.i(TAG,result.toString());
                 //db저장
                 ptype = result.getBarcodeFormat().toString();
                 presult = result.toString();
@@ -153,22 +151,18 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
     @Override
     protected void onResume() {
         super.onResume();
-        Log.i(TAG,"2");
-
         capture.onResume();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.i(TAG,"3");
         capture.onPause();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.i(TAG,"4");
         capture.onDestroy();
     }
 
@@ -226,11 +220,10 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode != RESULT_OK) {
-            Toast.makeText(this, "취소 되었습니다.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.canceled, Toast.LENGTH_SHORT).show();
             if(tempFile != null) {
                 if (tempFile.exists()) {
                     if (tempFile.delete()) {
-                        Log.e(TAG, tempFile.getAbsolutePath() + " 삭제 성공");
                         tempFile = null;
                     }
                 }
@@ -265,7 +258,6 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
                     photoView.setVisibility(View.VISIBLE);
                     //스캔 시작
                     Result decoded = scanQRImage(img);
-                    Log.i("QrTest", "Decoded string="+decoded);
                     //결과 다이얼로그 띠우기
                     if(decoded != null){
                         //db저장
@@ -386,7 +378,6 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
         // Save a file: path for use with ACTION_VIEW intents
         if (image != null) {
             mCurrentPhotoPath = "file:" + image.getAbsolutePath();
-            Log.i("Ihdh", "Image" + mCurrentPhotoPath);
         }
         return image;
     }
@@ -428,11 +419,9 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
         decodeHints.put(DecodeHintType.TRY_HARDER, Boolean.TRUE);
         //decodeHints.put(DecodeHintType.PURE_BARCODE, Boolean.TRUE);
         try {
-            Log.i(TAG,"try");
             result = reader.decode(bitmap,decodeHints);
         }
         catch (Exception e) {
-            Log.i(TAG,"catch");
             return null;
         }
         return result;
@@ -455,10 +444,9 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
      * @return void
      */
     public void showQRcodeDialog(final String url){
-        Log.i(TAG,"다이얼로그시작");
         builder = new AlertDialog.Builder(this);
-        builder.setMessage(url+"로 이동하시겠습니까?");
-        builder.setPositiveButton("예",
+        builder.setMessage(url+R.string.move);
+        builder.setPositiveButton(R.string.yes,
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -468,7 +456,7 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
                         photoView.setVisibility(View.INVISIBLE);
                     }
                 });
-        builder.setNegativeButton("아니오",
+        builder.setNegativeButton(R.string.no,
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -481,7 +469,6 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
         dialog.setCancelable(false);//뒤로가기키 막기
         dialog.setCanceledOnTouchOutside(false);//배경 터치 막기
         dialog.show();
-        Log.i(TAG,"다이얼로그끝");
     }
     /**
      * 다이얼로그를 띄웁니다.
@@ -490,10 +477,9 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
      * @return void
      */
     public void showBarcodeDialog(final String num){
-        Log.i(TAG,"다이얼로그시작");
         builder = new AlertDialog.Builder(this);
         builder.setMessage(num);
-        builder.setPositiveButton("확인",
+        builder.setPositiveButton(R.string.ok,
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -506,7 +492,6 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
         dialog.setCancelable(false);//뒤로가기키 막기
         dialog.setCanceledOnTouchOutside(false);//배경 터치 막기
         dialog.show();
-        Log.i(TAG,"다이얼로그끝");
     }
     /**
      * 다이얼로그를 띄웁니다.
@@ -514,10 +499,9 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
      * @return void
      */
     public void showError(){
-        Log.i(TAG,"다이얼로그시작");
         builder = new AlertDialog.Builder(this);
-        builder.setMessage("스캔된 내용이 없습니다. 다시 시도해주세요.");
-        builder.setPositiveButton("돌아가기",
+        builder.setMessage(R.string.retry);
+        builder.setPositiveButton(R.string.back,
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -530,6 +514,5 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
         dialog.setCancelable(false);//뒤로가기키 막기
         dialog.setCanceledOnTouchOutside(false);//배경 터치 막기
         dialog.show();
-        Log.i(TAG,"다이얼로그끝");
     }
 }
