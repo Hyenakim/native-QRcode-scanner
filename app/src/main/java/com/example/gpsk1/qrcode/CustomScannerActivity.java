@@ -451,7 +451,7 @@ public class CustomScannerActivity extends Activity implements DecoratedBarcodeV
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-                        intent.setPackage("com.android.chrome");
+                        intent.setPackage(getResources().getString(R.string.goCrome));
                         startActivity(intent);
                         photoView.setVisibility(View.INVISIBLE);
                     }

@@ -7,34 +7,43 @@
     android:background="@color/background"
     tools:context=".ResultActivity">
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:onClick="goBack"
-            android:id="@+id/back"
-            android:background="@color/background"
-            android:src="@drawable/round_reply_black_48"/>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:onClick="goBack"
+        android:id="@+id/back"
+        android:background="@color/background"
+        android:src="@drawable/round_reply_black_48"/>
 
 
-            <ListView
-                android:id="@+id/listview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/back"
-                android:layout_above="@+id/testview"
-                android:background="@drawable/border"
-                >
-            </ListView>
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/back"
+        android:background="@drawable/border"
+        >
+    </ListView>
 
-            <TextView
-                android:id="@+id/testview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_alignParentBottom="true"
-                android:padding="15dp"
-                android:text="@string/listShow" />
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recyclerview"
+        android:layout_below="@+id/listview"
+        android:layout_above="@+id/testview"
+        android:background="@drawable/border"
+        >
+    </android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/testview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:padding="15dp"
+        android:text="@string/listShow" />
 
 
 </RelativeLayout>

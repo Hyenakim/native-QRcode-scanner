@@ -11,7 +11,15 @@
   <component name="ChangeListManager">
     <list default="true" id="7b6a1729-dfb6-4940-98d4-e0e6cf337eda" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/CustomScannerActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/CustomScannerActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/ResultActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/ResultActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/adapter/CursorRecyclerViewAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/adapter/CursorRecyclerViewAdapter.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/adapter/ResultAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/adapter/ResultAdapter.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/adapter/ResultViewHolder.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/adapter/ResultViewHolder.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/model/Result.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/model/Result.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_result.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_result.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,12 +48,39 @@
       <file leaf-file-name="CustomScannerActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/CustomScannerActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="446" column="48" lean-forward="false" selection-start-line="446" selection-start-column="48" selection-end-line="446" selection-end-column="48" />
+            <state relative-caret-position="2632">
+              <caret line="457" column="19" lean-forward="true" selection-start-line="457" selection-start-column="19" selection-end-line="457" selection-end-column="19" />
               <folding>
-                <element signature="e#6110#6111#0" expanded="true" />
-                <element signature="e#6163#6164#0" expanded="true" />
+                <element signature="e#5160#5207#0" expanded="true" />
+                <element signature="e#5243#5290#0" expanded="true" />
+                <element signature="e#7491#7508#0" expanded="true" />
+                <element signature="e#14090#14114#0" expanded="true" />
+                <element signature="e#14979#15018#0" expanded="true" />
+                <element signature="e#15055#15067#0" expanded="true" />
+                <element signature="e#15085#15558#0" expanded="true" />
+                <element signature="e#15362#15404#0" expanded="true" />
+                <element signature="e#15557#15558#0" expanded="true" />
+                <element signature="e#15595#15606#0" expanded="true" />
+                <element signature="e#15624#15970#0" expanded="true" />
+                <element signature="e#15969#15970#0" expanded="true" />
+                <element signature="e#16421#16432#0" expanded="true" />
+                <element signature="e#16450#16796#0" expanded="true" />
+                <element signature="e#16795#16796#0" expanded="true" />
+                <element signature="e#17155#17169#0" expanded="true" />
+                <element signature="e#17206#17219#0" expanded="true" />
+                <element signature="e#17237#17583#0" expanded="true" />
+                <element signature="e#17582#17583#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CursorRecyclerViewAdapter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/adapter/CursorRecyclerViewAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2768">
+              <caret line="17" column="45" lean-forward="true" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -53,11 +88,33 @@
       <file leaf-file-name="ResultActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/ResultActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="32" column="42" lean-forward="false" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+            <state relative-caret-position="508">
+              <caret line="123" column="62" lean-forward="false" selection-start-line="123" selection-start-column="62" selection-end-line="123" selection-end-column="62" />
               <folding>
-                <element signature="e#1238#2088#0" expanded="true" />
-                <element signature="e#2087#2088#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1765#2589#0" expanded="true" />
+                <element signature="e#2321#2343#0" expanded="true" />
+                <element signature="e#2588#2589#0" expanded="true" />
+                <element signature="e#2799#3489#0" expanded="true" />
+                <element signature="e#3195#3243#0" expanded="true" />
+                <element signature="e#3488#3489#0" expanded="true" />
+                <element signature="e#4641#4680#0" expanded="true" />
+                <element signature="e#4717#4729#0" expanded="true" />
+                <element signature="e#4747#5155#0" expanded="true" />
+                <element signature="e#5154#5155#0" expanded="true" />
+                <element signature="e#5192#5203#0" expanded="true" />
+                <element signature="e#5221#5487#0" expanded="true" />
+                <element signature="e#5486#5487#0" expanded="true" />
+                <element signature="e#5523#5538#0" expanded="true" />
+                <element signature="e#5556#5868#0" expanded="true" />
+                <element signature="e#5867#5868#0" expanded="true" />
+                <element signature="e#6339#6388#0" expanded="true" />
+                <element signature="e#6425#6436#0" expanded="true" />
+                <element signature="e#6454#6682#0" expanded="true" />
+                <element signature="e#6681#6682#0" expanded="true" />
+                <element signature="e#6718#6733#0" expanded="true" />
+                <element signature="e#6751#7063#0" expanded="true" />
+                <element signature="e#7062#7063#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -66,31 +123,37 @@
       <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+            <state relative-caret-position="576">
+              <caret line="16" column="45" lean-forward="false" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="colors.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <file leaf-file-name="ResultAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/adapter/ResultAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="6" column="31" lean-forward="false" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
-              <folding />
+            <state relative-caret-position="1332">
+              <caret line="37" column="17" lean-forward="false" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#607#608#0" expanded="true" />
+                <element signature="e#649#650#0" expanded="true" />
+                <element signature="e#708#709#0" expanded="true" />
+                <element signature="e#746#747#0" expanded="true" />
+                <element signature="e#1033#1267#0" expanded="true" />
+                <element signature="e#1266#1267#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_result.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="activity_result.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_result.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
-              <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-              <folding>
-                <element signature="e#1438#1456#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="396">
+              <caret line="23" column="40" lean-forward="false" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+              <folding />
             </state>
           </provider>
           <provider editor-type-id="android-designer2">
@@ -98,11 +161,62 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="row.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/row.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="11" column="45" lean-forward="false" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersonAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Downloads/[21강]_RecyclerView_2/21차시/SampleList_DD2-master/app/src/main/java/com/begentgroup/samplelist/PersonAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="936">
+              <caret line="36" column="5" lean-forward="false" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersonView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Downloads/[21강]_RecyclerView_2/21차시/SampleList_DD2-master/app/src/main/java/com/begentgroup/samplelist/widget/PersonView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="936">
+              <caret line="42" column="70" lean-forward="false" selection-start-line="42" selection-start-column="70" selection-end-line="42" selection-end-column="70" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersonViewHolder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Downloads/[21강]_RecyclerView_2/21차시/SampleList_DD2-master/app/src/main/java/com/begentgroup/samplelist/PersonViewHolder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="18" column="46" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>TedPermission</find>
+      <find>listener</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2128,14 +2242,18 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/util/BackPressCloseHandler.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/adapter/CursorAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/handler/DBHandler.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/model/Result.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/util/DBHandler.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/border.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/model/Result.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/adapter/CursorRecyclerViewAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/adapter/ResultViewHolder.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/adapter/ResultAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_result.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/row.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/ResultActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/CustomScannerActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_result.xml" />
       </list>
     </option>
   </component>
@@ -2161,9 +2279,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
       <pane id="Scratches" />
+      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -2205,6 +2323,36 @@
               <item name="main" type="cbb8eebc:String" user="main" />
               <item name="java" type="cbb8eebc:String" user="java" />
               <item name="com/example/gpsk1/qrcode" type="cbb8eebc:String" user="com/example/gpsk1/qrcode" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="com/example/gpsk1/qrcode" type="cbb8eebc:String" user="com/example/gpsk1/qrcode" />
+              <item name="adapter" type="cbb8eebc:String" user="adapter" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="com/example/gpsk1/qrcode" type="cbb8eebc:String" user="com/example/gpsk1/qrcode" />
+              <item name="model" type="cbb8eebc:String" user="model" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="com/example/gpsk1/qrcode" type="cbb8eebc:String" user="com/example/gpsk1/qrcode" />
+              <item name="util" type="cbb8eebc:String" user="util" />
             </path>
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
@@ -2262,8 +2410,10 @@
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="last_opened_file_path" value="$USER_HOME$/AndroidStudioProjects/Triper" />
-    <property name="device.picker.selection" value="Nexus_5_API_26" />
+    <property name="device.picker.selection" value="0558c5d43443e96f" />
     <property name="SearchEverywhereHistoryKey" value="CaptureManager&#9;PSI&#9;JAVA://com.journeyapps.barcodescanner.CaptureManager&#10;Adapter&#9;FILE&#9;jar://C:/Program Files/Android/Android Studio/jre/jre/lib/rt.jar!/com/sun/xml/internal/ws/api/server/Adapter.class&#10;ListAdap&#9;PSI&#9;JAVA://android.widget.ListAdapter&#10;baseAd&#9;PSI&#9;JAVA://android.widget.BaseAdapter&#10;Cursor&#9;FILE&#9;jar://C:/Users/gpsk1/AppData/Local/Android/Sdk/platforms/android-25/android.jar!/android/widget/CursorAdapter.class" />
+    <property name="android.project.structure.last.selected" value="app" />
+    <property name="android.project.structure.proportion" value="0.15" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -2365,6 +2515,18 @@
       <module name="" />
       <envs />
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <module name="app" />
+      <envs />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -2436,6 +2598,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1909" y="-1083" width="3862" height="2136" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2444,16 +2607,16 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299735" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299735" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298809" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298809" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298809" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3298809" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18647215" sideWeight="0.496116" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3298809" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1883289" sideWeight="0.496116" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298809" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2477,22 +2640,36 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/CustomScannerActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2268">
-          <caret line="63" column="26" lean-forward="true" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
-          <folding>
-            <element signature="e#6110#6111#0" expanded="true" />
-            <element signature="e#6163#6164#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/ResultActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="684">
           <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1765#2589#0" expanded="true" />
+            <element signature="e#2321#2343#0" expanded="true" />
+            <element signature="e#2588#2589#0" expanded="true" />
+            <element signature="e#2799#3489#0" expanded="true" />
+            <element signature="e#3195#3243#0" expanded="true" />
+            <element signature="e#3488#3489#0" expanded="true" />
+            <element signature="e#4641#4680#0" expanded="true" />
+            <element signature="e#4717#4729#0" expanded="true" />
+            <element signature="e#4747#5155#0" expanded="true" />
+            <element signature="e#5154#5155#0" expanded="true" />
+            <element signature="e#5192#5203#0" expanded="true" />
+            <element signature="e#5221#5487#0" expanded="true" />
+            <element signature="e#5486#5487#0" expanded="true" />
+            <element signature="e#5523#5538#0" expanded="true" />
+            <element signature="e#5556#5868#0" expanded="true" />
+            <element signature="e#5867#5868#0" expanded="true" />
+            <element signature="e#6339#6388#0" expanded="true" />
+            <element signature="e#6425#6436#0" expanded="true" />
+            <element signature="e#6454#6682#0" expanded="true" />
+            <element signature="e#6681#6682#0" expanded="true" />
+            <element signature="e#6718#6733#0" expanded="true" />
+            <element signature="e#6751#7063#0" expanded="true" />
+            <element signature="e#7062#7063#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2500,10 +2677,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="e#387#388#0" expanded="false" />
-            <element signature="e#420#421#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2554,7 +2728,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7560">
           <caret line="210" column="34" lean-forward="false" selection-start-line="210" selection-start-column="34" selection-end-line="210" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2571,8 +2744,26 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#6110#6111#0" expanded="true" />
-            <element signature="e#6163#6164#0" expanded="true" />
+            <element signature="e#5160#5207#0" expanded="true" />
+            <element signature="e#5243#5290#0" expanded="true" />
+            <element signature="e#6110#6111#0" expanded="false" />
+            <element signature="e#6163#6164#0" expanded="false" />
+            <element signature="e#7491#7508#0" expanded="true" />
+            <element signature="e#14090#14114#0" expanded="true" />
+            <element signature="e#14979#15018#0" expanded="true" />
+            <element signature="e#15055#15067#0" expanded="true" />
+            <element signature="e#15085#15558#0" expanded="true" />
+            <element signature="e#15557#15558#0" expanded="true" />
+            <element signature="e#15595#15606#0" expanded="true" />
+            <element signature="e#15624#15970#0" expanded="true" />
+            <element signature="e#15969#15970#0" expanded="true" />
+            <element signature="e#16421#16432#0" expanded="true" />
+            <element signature="e#16450#16796#0" expanded="true" />
+            <element signature="e#16795#16796#0" expanded="true" />
+            <element signature="e#17155#17169#0" expanded="true" />
+            <element signature="e#17206#17219#0" expanded="true" />
+            <element signature="e#17237#17583#0" expanded="true" />
+            <element signature="e#17582#17583#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2582,8 +2773,26 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#6110#6111#0" expanded="true" />
-            <element signature="e#6163#6164#0" expanded="true" />
+            <element signature="e#5160#5207#0" expanded="true" />
+            <element signature="e#5243#5290#0" expanded="true" />
+            <element signature="e#6110#6111#0" expanded="false" />
+            <element signature="e#6163#6164#0" expanded="false" />
+            <element signature="e#7491#7508#0" expanded="true" />
+            <element signature="e#14090#14114#0" expanded="true" />
+            <element signature="e#14979#15018#0" expanded="true" />
+            <element signature="e#15055#15067#0" expanded="true" />
+            <element signature="e#15085#15558#0" expanded="true" />
+            <element signature="e#15557#15558#0" expanded="true" />
+            <element signature="e#15595#15606#0" expanded="true" />
+            <element signature="e#15624#15970#0" expanded="true" />
+            <element signature="e#15969#15970#0" expanded="true" />
+            <element signature="e#16421#16432#0" expanded="true" />
+            <element signature="e#16450#16796#0" expanded="true" />
+            <element signature="e#16795#16796#0" expanded="true" />
+            <element signature="e#17155#17169#0" expanded="true" />
+            <element signature="e#17206#17219#0" expanded="true" />
+            <element signature="e#17237#17583#0" expanded="true" />
+            <element signature="e#17582#17583#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2642,7 +2851,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6876">
           <caret line="210" column="34" lean-forward="false" selection-start-line="210" selection-start-column="34" selection-end-line="210" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2696,25 +2904,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/model/Result.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/adapter/CursorAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="e#387#388#0" expanded="false" />
-            <element signature="e#420#421#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/util/BackPressCloseHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -2745,29 +2934,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/row.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/util/AnyOrientationCaptureActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/util/DBHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="15" column="53" lean-forward="true" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
           <folding />
         </state>
       </provider>
@@ -2802,47 +2972,220 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/ResultActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/util/DBHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="32" column="42" lean-forward="false" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+        <state relative-caret-position="504">
+          <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/[21강]_RecyclerView_2/21차시/SampleList_DD2-master/app/src/main/java/com/begentgroup/samplelist/MyGroupAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/[21강]_RecyclerView_2/21차시/SampleList_DD2-master/app/src/main/java/com/begentgroup/samplelist/GroupAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/[21강]_RecyclerView_2/21차시/SampleList_DD2-master/app/src/main/java/com/begentgroup/samplelist/ActorAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-119">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/[21강]_RecyclerView_2/21차시/SampleList_DD2-master/app/src/main/java/com/begentgroup/samplelist/HeaderViewHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="21" column="36" lean-forward="true" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
           <folding>
-            <element signature="e#1238#2088#0" expanded="true" />
-            <element signature="e#2087#2088#0" expanded="true" />
+            <element signature="e#726#727#0" expanded="false" />
+            <element signature="e#813#814#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-25/android/view/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="22612" column="21" lean-forward="false" selection-start-line="22612" selection-start-column="21" selection-end-line="22612" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/model/Result.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="904">
+          <caret line="66" column="5" lean-forward="false" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/adapter/ResultViewHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/[21강]_RecyclerView_2/21차시/SampleList_DD2-master/app/src/main/java/com/begentgroup/samplelist/widget/PersonView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="936">
+          <caret line="42" column="70" lean-forward="false" selection-start-line="42" selection-start-column="70" selection-end-line="42" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/[21강]_RecyclerView_2/21차시/SampleList_DD2-master/app/src/main/java/com/begentgroup/samplelist/PersonAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="936">
+          <caret line="36" column="5" lean-forward="false" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/[21강]_RecyclerView_2/21차시/SampleList_DD2-master/app/src/main/java/com/begentgroup/samplelist/PersonViewHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="18" column="46" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_result.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="23" column="40" lean-forward="false" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/row.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="11" column="45" lean-forward="false" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/adapter/CursorAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/adapter/ResultAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1332">
+          <caret line="37" column="17" lean-forward="false" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#607#608#0" expanded="true" />
+            <element signature="e#649#650#0" expanded="true" />
+            <element signature="e#708#709#0" expanded="true" />
+            <element signature="e#746#747#0" expanded="true" />
+            <element signature="e#1033#1267#0" expanded="true" />
+            <element signature="e#1266#1267#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        <state relative-caret-position="576">
+          <caret line="16" column="45" lean-forward="false" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/ResultActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="123" column="62" lean-forward="false" selection-start-line="123" selection-start-column="62" selection-end-line="123" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1765#2589#0" expanded="true" />
+            <element signature="e#2321#2343#0" expanded="true" />
+            <element signature="e#2588#2589#0" expanded="true" />
+            <element signature="e#2799#3489#0" expanded="true" />
+            <element signature="e#3195#3243#0" expanded="true" />
+            <element signature="e#3488#3489#0" expanded="true" />
+            <element signature="e#4641#4680#0" expanded="true" />
+            <element signature="e#4717#4729#0" expanded="true" />
+            <element signature="e#4747#5155#0" expanded="true" />
+            <element signature="e#5154#5155#0" expanded="true" />
+            <element signature="e#5192#5203#0" expanded="true" />
+            <element signature="e#5221#5487#0" expanded="true" />
+            <element signature="e#5486#5487#0" expanded="true" />
+            <element signature="e#5523#5538#0" expanded="true" />
+            <element signature="e#5556#5868#0" expanded="true" />
+            <element signature="e#5867#5868#0" expanded="true" />
+            <element signature="e#6339#6388#0" expanded="true" />
+            <element signature="e#6425#6436#0" expanded="true" />
+            <element signature="e#6454#6682#0" expanded="true" />
+            <element signature="e#6681#6682#0" expanded="true" />
+            <element signature="e#6718#6733#0" expanded="true" />
+            <element signature="e#6751#7063#0" expanded="true" />
+            <element signature="e#7062#7063#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/CustomScannerActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="446" column="48" lean-forward="false" selection-start-line="446" selection-start-column="48" selection-end-line="446" selection-end-column="48" />
+        <state relative-caret-position="2632">
+          <caret line="457" column="19" lean-forward="true" selection-start-line="457" selection-start-column="19" selection-end-line="457" selection-end-column="19" />
           <folding>
-            <element signature="e#6110#6111#0" expanded="true" />
-            <element signature="e#6163#6164#0" expanded="true" />
+            <element signature="e#5160#5207#0" expanded="true" />
+            <element signature="e#5243#5290#0" expanded="true" />
+            <element signature="e#7491#7508#0" expanded="true" />
+            <element signature="e#14090#14114#0" expanded="true" />
+            <element signature="e#14979#15018#0" expanded="true" />
+            <element signature="e#15055#15067#0" expanded="true" />
+            <element signature="e#15085#15558#0" expanded="true" />
+            <element signature="e#15362#15404#0" expanded="true" />
+            <element signature="e#15557#15558#0" expanded="true" />
+            <element signature="e#15595#15606#0" expanded="true" />
+            <element signature="e#15624#15970#0" expanded="true" />
+            <element signature="e#15969#15970#0" expanded="true" />
+            <element signature="e#16421#16432#0" expanded="true" />
+            <element signature="e#16450#16796#0" expanded="true" />
+            <element signature="e#16795#16796#0" expanded="true" />
+            <element signature="e#17155#17169#0" expanded="true" />
+            <element signature="e#17206#17219#0" expanded="true" />
+            <element signature="e#17237#17583#0" expanded="true" />
+            <element signature="e#17582#17583#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_result.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/gpsk1/qrcode/adapter/CursorRecyclerViewAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-          <folding>
-            <element signature="e#1438#1456#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-2768">
+          <caret line="17" column="45" lean-forward="true" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
   </component>
