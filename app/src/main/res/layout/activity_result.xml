@@ -13,8 +13,9 @@
         android:layout_alignParentTop="true"
         android:onClick="goBack"
         android:id="@+id/back"
+        android:padding="7dp"
         android:background="@color/background"
-        android:src="@drawable/round_reply_black_48"/>
+        android:src="@drawable/round_reply_black_36"/>
 
 
     <ListView
